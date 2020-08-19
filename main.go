@@ -22,7 +22,7 @@ func main() {
 
 		so.Join("chat")
 
-		so.On("chat message", func(msg string) {
+		so.On("chat message", func(msg string) string {
 			log.Println("Message receive from the client" + msg)
 			so.BroadcastTo("chat", "chat message", msg)
 		})
